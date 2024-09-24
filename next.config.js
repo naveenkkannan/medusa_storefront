@@ -1,5 +1,7 @@
 const { withStoreConfig } = require("./store-config")
 const store = require("./store.config.json")
+// next.config.js
+const path = require('path');
 
 /**
  * @type {import('next').NextConfig}
@@ -30,5 +32,13 @@ const nextConfig = withStoreConfig({
 })
 
 console.log("next.config.js", JSON.stringify(module.exports, null, 2))
+
+
+
+module.exports = {
+  // This tells Next.js where to find your app directory
+  srcDir: path.join(__dirname, 'src'),
+};
+
 
 module.exports = nextConfig
